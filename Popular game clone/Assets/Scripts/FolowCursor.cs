@@ -8,7 +8,7 @@ public class FolowCursor : MonoBehaviour
     public Transform MirrorMouse;
     public Transform Self;
     SpriteRenderer spriteRenderer;
-
+  
 
     private void Awake()
     {
@@ -30,6 +30,7 @@ public class FolowCursor : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
+           
             // Update the object's position based on the direction and speed.
             transform.Translate(moveAmount);
             if (MirrorMouse.position.x > 0.1f)
