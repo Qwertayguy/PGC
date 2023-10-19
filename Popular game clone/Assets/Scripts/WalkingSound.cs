@@ -1,38 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Audio;
 using UnityEngine;
 
 public class WalkingSound : MonoBehaviour
 {
-    AudioSource audioSource;
-    bool isMoving = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    public AudioSource SillyWalk;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKey(KeyCode.Mouse0))
         {
-            isMoving = true;
+            SillyWalk.enabled = true;
         }
         else
         {
-            isMoving = false;
-        }
-
-        if(isMoving == true)
-        {
-            audioSource.Play();
-        }
-        else
-        {
-            audioSource.Stop();
+            SillyWalk.enabled = false;
         }
     }
 }

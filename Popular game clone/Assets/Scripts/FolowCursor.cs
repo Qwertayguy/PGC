@@ -15,7 +15,7 @@ public class FolowCursor : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    public void FixedUpdate()
     {
         Quaternion ownRotation = Self.rotation;
         // Get the current mouse position in the world space.
