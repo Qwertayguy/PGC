@@ -8,7 +8,7 @@ public class FolowCursor : MonoBehaviour
     public Transform MirrorMouse;
     public Transform Self;
     SpriteRenderer spriteRenderer;
-  
+
 
     private void Awake()
     {
@@ -28,12 +28,14 @@ public class FolowCursor : MonoBehaviour
         // Normalize the direction to have a magnitude of 1, then multiply by the speed.
         Vector3 moveAmount = direction.normalized * speed * Time.deltaTime;
 
+        
+
         if (Input.GetButton("Fire1"))
         {
-           
+
             // Update the object's position based on the direction and speed.
             transform.Translate(moveAmount);
-            if (MirrorMouse.position.x > 0.1f)
+            if (Input.mousePosition.x > 1900)
             {
                 spriteRenderer.flipX = false;
             }
