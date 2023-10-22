@@ -4,20 +4,34 @@ using UnityEngine;
 
 public class DoorOpen : MonoBehaviour
 {
-   
-      
-    private void OnCollisionEnter2d(Collision collision)
+
+    bool check;
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Door"))
         {
-            Debug.Log("Kys");
-            Destroy(this.gameObject);
+            Destroy(collision.gameObject);
+            Debug.Log("syk");
+        }
+    
+    }
+
+    private void OnTriggerEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Door"))
+        {
+            Destroy(collision.gameObject);
+            Debug.Log("syk");
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        Debug.Log("Kys");
+        if(check == true)
+        {
+            Destroy(this.gameObject);
+            Debug.Log("syk");
+        }
     }
 
 }
