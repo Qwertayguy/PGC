@@ -3462,6 +3462,7 @@ GameObject:
   - component: {fileID: 1720756272}
   - component: {fileID: 1720756273}
   - component: {fileID: 1720756269}
+  - component: {fileID: 1720756274}
   m_Layer: 0
   m_Name: Pesant
   m_TagString: Player
@@ -3718,6 +3719,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c86975e0db7dd4088925acd4dfd7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1720756274
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720756265}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abb13dca4752cbf478e4ac4f1ae6aad9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1751324366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3744,7 +3764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751324366}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.645, y: -1.7, z: 43.32807}
+  m_LocalPosition: {x: 10.645, y: -1.795, z: 43.32807}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 208615788}
