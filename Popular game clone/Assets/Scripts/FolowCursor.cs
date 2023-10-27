@@ -7,6 +7,7 @@ public class FolowCursor : MonoBehaviour
     public float speed = 5.0f; // Adjust the speed as needed.
     public Transform MirrorMouse;
     public Transform Self;
+    public Animator animator;
     SpriteRenderer spriteRenderer;
 
 
@@ -35,6 +36,7 @@ public class FolowCursor : MonoBehaviour
 
             // Update the object's position based on the direction and speed.
             transform.Translate(moveAmount);
+            animator.SetBool("IsWalking", false);
             if (Input.mousePosition.x > 1900)
             {
                 spriteRenderer.flipX = false;
@@ -43,6 +45,10 @@ public class FolowCursor : MonoBehaviour
             {
                 spriteRenderer.flipX = true;
             }
+        }
+        else
+        {
+            animator.SetBool("IsWalking", true);
         }
     }
 }
