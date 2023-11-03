@@ -12544,10 +12544,10 @@ GameObject:
   m_Component:
   - component: {fileID: 690571711}
   - component: {fileID: 690571710}
-  - component: {fileID: 690571709}
   - component: {fileID: 690571708}
   - component: {fileID: 690571707}
   - component: {fileID: 690571712}
+  - component: {fileID: 690571709}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
