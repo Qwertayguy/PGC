@@ -35415,6 +35415,7 @@ GameObject:
   - component: {fileID: 690571707}
   - component: {fileID: 690571712}
   - component: {fileID: 690571709}
+  - component: {fileID: 690571713}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -35434,13 +35435,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65377aefcc1bc534983c1d3abb83916a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown:
+    cooldownTime: 2
   speed: 3
   Player: {fileID: 1720756267}
   HitPoint: {fileID: 2100028553}
   HitRange: 1
   HateLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!61 &690571708
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35573,6 +35576,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &690571713
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690571706}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.16666667
 --- !u!1 &713777871
 GameObject:
   m_ObjectHideFlags: 0

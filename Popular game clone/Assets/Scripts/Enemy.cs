@@ -4,18 +4,47 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] Cooldown cooldown;
     public float speed;
     public Transform Player;
     public Transform HitPoint;
     public float HitRange = 1f;
     public LayerMask HateLayers;
     SpriteRenderer spriteRenderer;
+
+    private bool check;
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            check = true;
+            Debug.Log("lol");
+        }
+    }
+
+   
+
+
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
+    {
+        if (check == false)
+        {
+            Walk();
+        }
+        else
+        {
+            StartCoroutine(Attack());
+        }
+        
+    }
+
+    void Walk()
     {
         Vector3 direction = Player.position - transform.position;
 
@@ -24,19 +53,19 @@ public class Enemy : MonoBehaviour
         transform.Translate(moveAmount);
     }
 
-    private void Update()
+    IEnumerator Attack()
     {
-        Attack();
-    }
 
-    void Attack()
-    {
+        yield return new WaitForSeconds(1);
         Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(HitPoint.position, HitRange, HateLayers);
 
         foreach(Collider2D enemy in HitEnemies)
         {
             Debug.Log("lmao");
         }
+        yield return new WaitForSeconds(1);
+        check = false;
+
     }
 
     private void OnDrawGizmosSelected()

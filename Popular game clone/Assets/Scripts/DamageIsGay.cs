@@ -28,6 +28,9 @@ public class DamageIsGay : MonoBehaviour
         }
     }
 
-
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        
+    }
 
 }
