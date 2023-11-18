@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
         else
         {
             StartCoroutine(Attack());
+            Debug.Log("bruh");
         }
         
     }
@@ -59,9 +60,14 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(1);
         Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(HitPoint.position, HitRange, HateLayers);
 
-        foreach(Collider2D enemy in HitEnemies)
+        foreach (Collider2D enemy in HitEnemies)
         {
-            Debug.Log("lmao");
+            if (check == true)
+            {
+                Debug.Log("hit" + enemy.name);
+
+                break;
+            }
         }
         yield return new WaitForSeconds(1);
         check = false;

@@ -35591,7 +35591,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.16666667
+  m_Radius: 0.1
 --- !u!1 &713777871
 GameObject:
   m_ObjectHideFlags: 0
@@ -58464,7 +58464,7 @@ GameObject:
   - component: {fileID: 1720756273}
   - component: {fileID: 1720756269}
   - component: {fileID: 1720756274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pesant
   m_TagString: Player
   m_Icon: {fileID: 0}
