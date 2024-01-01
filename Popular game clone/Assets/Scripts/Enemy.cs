@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     private bool check;
+    private bool checkers;
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -37,9 +38,10 @@ public class Enemy : MonoBehaviour
         {
             Walk();
         }
-        else
+        else if (checkers == false)
         {
             StartCoroutine(Attack());
+            checkers = true;
             Debug.Log("bruh");
         }
         
@@ -70,7 +72,7 @@ public class Enemy : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(1);
-        check = false;
+        checkers = false;
 
     }
 
