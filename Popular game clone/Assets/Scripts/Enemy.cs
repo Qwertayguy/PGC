@@ -15,14 +15,7 @@ public class Enemy : MonoBehaviour
     private bool check;
     private bool checkers;
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            check = true;
-            Debug.Log("lol");
-        }
-    }
+    
 
    
 
@@ -34,7 +27,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (check == false)
+        if (checkers == true)
         {
             Walk();
         }
@@ -42,7 +35,6 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(Attack());
             checkers = true;
-            Debug.Log("bruh");
         }
         
     }
@@ -64,12 +56,12 @@ public class Enemy : MonoBehaviour
 
         foreach (Collider2D enemy in HitEnemies)
         {
-            if (check == true)
-            {
+            
+                enemy.GetComponent<Health>().TakeDamage();
                 Debug.Log("hit" + enemy.name);
 
                 break;
-            }
+            
         }
         yield return new WaitForSeconds(1);
         checkers = false;
