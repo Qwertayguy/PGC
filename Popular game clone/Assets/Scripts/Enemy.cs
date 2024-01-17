@@ -15,23 +15,31 @@ public class Enemy : MonoBehaviour
     private bool check;
     private bool checkers;
 
-    
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            check = true;
+            Debug.Log("lol");
+        }
+    }
 
-   
+
 
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        check = false;
     }
 
     void FixedUpdate()
     {
-        if (checkers == true)
+        if (check == false)
         {
             Walk();
         }
-        else if (checkers == false)
+        else if (checkers == false && check == true)
         {
             StartCoroutine(Attack());
             checkers = true;
@@ -41,6 +49,7 @@ public class Enemy : MonoBehaviour
 
     void Walk()
     {
+
         Vector3 direction = Player.position - transform.position;
 
         Vector3 moveAmount = direction.normalized * speed * Time.deltaTime;
@@ -50,7 +59,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Attack()
     {
-
+        check = false;
         yield return new WaitForSeconds(1);
         Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(HitPoint.position, HitRange, HateLayers);
 
@@ -61,6 +70,7 @@ public class Enemy : MonoBehaviour
                 Debug.Log("hit" + enemy.name);
 
                 break;
+
             
         }
         yield return new WaitForSeconds(1);
