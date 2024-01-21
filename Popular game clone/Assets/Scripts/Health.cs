@@ -4,23 +4,37 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] float health;
-    [SerializeField] float maxHealth = 100f;
+    [SerializeField] int health;
+    [SerializeField] int maxHealth = 100;
+    public HealthBar healthBar;
     void Start()
     {
         health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        health = health - 25f;
+        health -= damage;
+        healthBar.SetHealth(health);
         Debug.Log(health);
+
+        // youch animation
+
+        if (health == 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        // die lmao
     }
 }
 

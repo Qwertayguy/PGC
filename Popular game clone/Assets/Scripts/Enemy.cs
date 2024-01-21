@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     private bool check;
     private bool checkers;
 
+    public int damage;
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -66,7 +68,7 @@ public class Enemy : MonoBehaviour
         foreach (Collider2D enemy in HitEnemies)
         {
             
-                enemy.GetComponent<Health>().TakeDamage();
+                enemy.GetComponent<Health>().TakeDamage(damage);
                 Debug.Log("hit" + enemy.name);
 
                 break;
