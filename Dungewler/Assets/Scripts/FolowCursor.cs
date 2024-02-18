@@ -5,6 +5,9 @@ using UnityEngine;
 public class FolowCursor : MonoBehaviour
 {
     public float speed = 5.0f; // Adjust the speed as needed.
+    public float nowX;
+    public float laterX;
+    public int lateFrame;
     public Transform MirrorMouse;
     public Transform Self;
     public Animator animator;
@@ -14,7 +17,10 @@ public class FolowCursor : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        nowX = transform.position.x;
     }
+
+   
 
     public void FixedUpdate()
     {
@@ -37,18 +43,22 @@ public class FolowCursor : MonoBehaviour
             // Update the object's position based on the direction and speed.
             transform.Translate(moveAmount);
             animator.SetBool("IsWalking", false);
-            if (Input.mousePosition.x > 1900)
-            {
-                spriteRenderer.flipX = false;
-            }
-            else
-            {
-                spriteRenderer.flipX = true;
-            }
+           //where old flip once was
         }
         else
         {
             animator.SetBool("IsWalking", true);
         }
+
+        if (nowX < transform.position.x)
+        {
+            spriteRenderer.flipX = false;
+        }
+        if (nowX > transform.position.x)
+        {
+            spriteRenderer.flipX = true;
+        }
+        nowX = transform.position.x;
     }
+
 }

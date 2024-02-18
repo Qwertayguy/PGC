@@ -22,7 +22,6 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             check = true;
-            Debug.Log("lol");
         }
     }
 
@@ -46,6 +45,15 @@ public class Enemy : MonoBehaviour
             StartCoroutine(Attack());
             checkers = true;
         }
+        
+    }
+    private void Update()
+    {
+        
+    }
+
+    private void LateUpdate()
+    {
         
     }
 
