@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FolowCursor : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float speed = 5.0f; // Adjust the speed as needed.
-    public float nowX;
-    public float laterX;
-    public int lateFrame;
+    public float lastX;
     public Transform MirrorMouse;
     public Transform Self;
     public Animator animator;
@@ -17,7 +15,7 @@ public class FolowCursor : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        nowX = transform.position.x;
+        lastX = transform.position.x;
     }
 
    
@@ -50,15 +48,15 @@ public class FolowCursor : MonoBehaviour
             animator.SetBool("IsWalking", true);
         }
 
-        if (nowX < transform.position.x)
+        if (lastX < transform.position.x)
         {
             spriteRenderer.flipX = false;
         }
-        if (nowX > transform.position.x)
+        if (lastX > transform.position.x)
         {
             spriteRenderer.flipX = true;
         }
-        nowX = transform.position.x;
+        lastX = transform.position.x;
     }
 
 }

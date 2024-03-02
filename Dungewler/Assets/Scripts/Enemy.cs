@@ -5,16 +5,21 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] Cooldown cooldown;
+    [SerializeField] ParticleSystem attackParticle = null;
     public float speed;
+    public float lastX;
+    public float HitRange = 1f;
     public Transform Player;
     public Transform HitPoint;
-    public float HitRange = 1f;
+    public Transform left;
+    public Transform right;
+    public GameObject particleChild;
     public LayerMask HateLayers;
+    EnemyParticles enemyParticles;
     SpriteRenderer spriteRenderer;
 
     private bool check;
     private bool checkers;
-
     public int damage;
 
     private void OnTriggerStay2D(Collider2D other)
@@ -25,12 +30,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
-
-
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        enemyParticles = particleChild.GetComponent<EnemyParticles>();
         check = false;
     }
 
@@ -45,16 +48,19 @@ public class Enemy : MonoBehaviour
             StartCoroutine(Attack());
             checkers = true;
         }
-        
-    }
-    private void Update()
-    {
-        
-    }
 
-    private void LateUpdate()
-    {
-        
+        particleChild.transform.position = Player.position;
+        if (Player.position.x < transform.position.x)
+        {
+            //flip
+            enemyParticles.flip = true;
+        }
+        if (Player.position.x > transform.position.x)
+        {
+            //dont flip
+            enemyParticles.flip = false;
+        }
+        lastX = transform.position.x;
     }
 
     void Walk()
@@ -75,11 +81,13 @@ public class Enemy : MonoBehaviour
 
         foreach (Collider2D enemy in HitEnemies)
         {
-            
-                enemy.GetComponent<Health>().TakeDamage(damage);
-                Debug.Log("hit" + enemy.name);
 
-                break;
+            //attackParticle.Play();
+            enemyParticles.activator = true;
+            enemy.GetComponent<Health>().TakeDamage(damage);
+            Debug.Log("hit" + enemy.name);
+
+            break;
 
             
         }

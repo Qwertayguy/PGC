@@ -40395,10 +40395,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown:
     cooldownTime: 2
+  attackParticle: {fileID: 0}
   speed: 3
+  lastX: 0
+  HitRange: 1
   Player: {fileID: 1720756267}
   HitPoint: {fileID: 2100028553}
-  HitRange: 1
+  left: {fileID: 1709818191}
+  right: {fileID: 1311570604}
+  particleChild: {fileID: 1337914866}
   HateLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -40511,7 +40516,9 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 2100028553}
+  - {fileID: 1709818191}
   - {fileID: 1337914867}
+  - {fileID: 1311570604}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59083,6 +59090,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135895248}
   m_CullTransparentMesh: 1
+--- !u!1 &1311570603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311570604}
+  m_Layer: 0
+  m_Name: Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1311570604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311570603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1, y: 0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 690571711}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1337914866
 GameObject:
   m_ObjectHideFlags: 0
@@ -59114,7 +59151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.16666667}
   m_Children: []
   m_Father: {fileID: 690571711}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!199 &1337914868
 ParticleSystemRenderer:
@@ -63958,6 +63995,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f52db1883fc5e540a7b97ec2d9f6765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackParticle: {fileID: 1337914869}
+  flip: 0
+  activator: 0
+  flipper: 0
+  left: {fileID: 1709818191}
+  right: {fileID: 1311570604}
+  self: {fileID: 1337914867}
+  parentEnemy: {fileID: 690571706}
 --- !u!1 &1426368183
 GameObject:
   m_ObjectHideFlags: 0
@@ -68509,6 +68554,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1709818190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1709818191}
+  m_Layer: 0
+  m_Name: Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1709818191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709818190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1, y: 0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 690571711}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1720756265
 GameObject:
   m_ObjectHideFlags: 0
@@ -68615,9 +68690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
-  nowXPosition: 0
-  laterXPosition: 0
-  lateFrame: 0
+  lastX: 0
   MirrorMouse: {fileID: 0}
   Self: {fileID: 1720756267}
   animator: {fileID: 1720756274}

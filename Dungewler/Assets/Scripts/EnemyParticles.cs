@@ -4,30 +4,49 @@ using UnityEngine;
 
 public class EnemyParticles : MonoBehaviour
 {
-    private bool check;
-    private bool checkers;
-    private void OnTriggerStay2D(Collider2D other)
+    [SerializeField] ParticleSystem attackParticle = null;
+    public bool flip;
+    public bool activator;
+    public float flipper;
+    public Transform left;
+    public Transform right;
+    public Transform self;
+    public GameObject parentEnemy;
+    Enemy enemyScript;
+    ParticleSystem particleSystemHere;
+    ParticleSystemRenderer particleSystemRenderer;
+
+
+    private void Awake()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            check = true;
-        }
+        enemyScript = parentEnemy.GetComponent<Enemy>();
+        particleSystemHere = self.GetComponent<ParticleSystem>();
+        particleSystemRenderer = particleSystemHere.GetComponent<ParticleSystemRenderer>();
+        flipper = particleSystemRenderer.flip.x;
     }
     void Start()
     {
-        if (check == true)
-        {
-            Debug.Log("does it work");
-        }
-        else
-        {
-            Debug.Log("its working");
-        }
+       
     }
 
  
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (activator == true)
+        {
+            attackParticle.Play();
+            activator = false;
+        }
+
+        if (flip == true)
+        {
+            Debug.Log("i Flipped le bitchlmao");
+            flipper = 1;
+        }
+        else
+        {
+            Debug.Log("i did not flip le bitchlmao");
+            flipper = 0;
+        }
     }
 }
