@@ -9,12 +9,13 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float lastX;
     public float HitRange = 1f;
-    public Transform Player;
+    public LayerMask HateLayers;
     public Transform HitPoint;
     public Transform left;
     public Transform right;
     public GameObject particleChild;
-    public LayerMask HateLayers;
+    public GameObject Player;
+    public GameObject Self;
     EnemyParticles enemyParticles;
     SpriteRenderer spriteRenderer;
 
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyParticles = particleChild.GetComponent<EnemyParticles>();
         check = false;
@@ -39,6 +41,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+
         if (check == false)
         {
             Walk();
@@ -49,13 +52,13 @@ public class Enemy : MonoBehaviour
             checkers = true;
         }
 
-        particleChild.transform.position = Player.position;
-        if (Player.position.x < transform.position.x)
+        particleChild.transform.position = Player.transform.position;
+        if (Player.transform.position.x < transform.position.x)
         {
             //flip
             enemyParticles.flip = true;
         }
-        if (Player.position.x > transform.position.x)
+        if (Player.transform.position.x > transform.position.x)
         {
             //dont flip
             enemyParticles.flip = false;
@@ -66,7 +69,7 @@ public class Enemy : MonoBehaviour
     void Walk()
     {
 
-        Vector3 direction = Player.position - transform.position;
+        Vector3 direction = Player.transform.position - transform.position;
 
         Vector3 moveAmount = direction.normalized * speed * Time.deltaTime;
 
