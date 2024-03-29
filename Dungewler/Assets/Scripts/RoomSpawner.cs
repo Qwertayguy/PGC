@@ -10,13 +10,17 @@ public class RoomSpawner : MonoBehaviour
     //3 = bottom
     //4 = left
 
-    private RoomTemplates templates;
+    public GameObject self;
+    ModeratorScript moderatorScript;
+    RoomTemplates templates;
     int rand;
     bool spawned;
     void Start()
     {
+        //moderatorScript = GameObject.FindGameObjectWithTag("Moderator").GetComponent<ModeratorScript>();
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         Invoke("Spawn", 0.1f);
+        StartCoroutine(KYS());
     }
 
     private void Update()
@@ -32,21 +36,25 @@ public class RoomSpawner : MonoBehaviour
             {
                 rand = Random.Range(0, templates.topRooms.Length);
                 Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
+                //moderatorScript.roomsPresent = moderatorScript.roomsPresent + 1;
             }
             else if (direction == 2)
             {
                 rand = Random.Range(0, templates.rightRooms.Length);
                 Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
+                //moderatorScript.roomsPresent = moderatorScript.roomsPresent + 1;
             }
             else if (direction == 3)
             {
                 rand = Random.Range(0, templates.bottomRooms.Length);
                 Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
+                //moderatorScript.roomsPresent = moderatorScript.roomsPresent + 1;
             }
             else if (direction == 4)
             {
                 rand = Random.Range(0, templates.leftRooms.Length);
                 Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
+                //moderatorScript.roomsPresent = moderatorScript.roomsPresent + 1;
             }
             spawned = true;
         }
@@ -54,7 +62,7 @@ public class RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Floor") || other.CompareTag("EnemySpawnable")) 
+        if (other.CompareTag("Enemy") == false || other.CompareTag("Player") == false || other.CompareTag("Door") == false || other.CompareTag("SpawnPoint") == false || other.CompareTag("Rooms") == false) 
         {
             Debug.Log("spawntrue");
             spawned = true;
@@ -68,6 +76,7 @@ public class RoomSpawner : MonoBehaviour
 
     IEnumerator KYS()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
+        Destroy(self); //*thunder sfx*
     }
 }

@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestingScript : MonoBehaviour
+public class ModeratorScript : MonoBehaviour
 {
-    public GameObject ObjectToSpawn;
-    // Start is called before the first frame update
+    public int maxRooms;
+    public int roomsPresent;
+    public int maxChest;
     void Start()
     {
         
@@ -14,6 +15,6 @@ public class TestingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Instantiate(ObjectToSpawn);
+        
     }
 }
