@@ -40,12 +40,12 @@ public class EnemyParticles : MonoBehaviour
 
         if (flip == true)
         {
-            Debug.Log("i Flipped le bitchlmao");
+            //Debug.Log("i Flipped le bitchlmao");
             flipper = 1;
         }
         else
         {
-            Debug.Log("i did not flip le bitchlmao");
+            //Debug.Log("i did not flip le bitchlmao");
             flipper = 0;
         }
     }

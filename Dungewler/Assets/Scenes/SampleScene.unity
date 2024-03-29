@@ -2011,7 +2011,8 @@ MonoBehaviour:
   topRooms: []
   rightRooms: []
   bottomRooms: []
-  leftRooms: []
+  leftRooms:
+  - {fileID: 4255098914983295931, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
 --- !u!1 &160854024
 GameObject:
   m_ObjectHideFlags: 0
@@ -44687,7 +44688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc8e3e385bb3de4d8f658337e31ef15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 0
+  direction: 1
 --- !u!1 &692150618
 GameObject:
   m_ObjectHideFlags: 0
@@ -68857,7 +68858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc8e3e385bb3de4d8f658337e31ef15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 0
+  direction: 4
 --- !u!1 &1223145026
 GameObject:
   m_ObjectHideFlags: 0
@@ -71966,31 +71967,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295476234}
   m_CullTransparentMesh: 1
---- !u!1 &1318687149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4993803666110200595, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
-  m_PrefabInstance: {fileID: 4993803664860850878}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1318687150 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
-  m_PrefabInstance: {fileID: 4993803664860850878}
+  m_CorrespondingSourceObject: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+  m_PrefabInstance: {fileID: 4255098915812223510}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1318687151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318687149}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c5ef0b3f6899064791878c57ff58312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  daTing: {fileID: 1201215525}
-  x: -21
-  y: -4
 --- !u!1 &1334599483
 GameObject:
   m_ObjectHideFlags: 0
@@ -72262,7 +72243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc8e3e385bb3de4d8f658337e31ef15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 0
+  direction: 2
 --- !u!1 &1378170374
 GameObject:
   m_ObjectHideFlags: 0
@@ -88396,58 +88377,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!1001 &4993803664860850878
+--- !u!1001 &4255098915812223510
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 64732045}
     m_Modifications:
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 33.4
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200592, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295928, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4993803666110200595, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+    - target: {fileID: 4255098914983295929, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
+      propertyPath: daTing
+      value: 
+      objectReference: {fileID: 1201215525}
+    - target: {fileID: 4255098914983295931, guid: 7a402c1bab6aaca41a34c4c9b9bbffeb, type: 3}
       propertyPath: m_Name
       value: PillarRoomLeft
       objectReference: {fileID: 0}

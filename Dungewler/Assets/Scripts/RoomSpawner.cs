@@ -19,7 +19,11 @@ public class RoomSpawner : MonoBehaviour
         Invoke("Spawn", 0.1f);
     }
 
-    
+    private void Update()
+    {
+
+    }
+
     void Spawn()
     {
         if(spawned == false)
@@ -46,5 +50,24 @@ public class RoomSpawner : MonoBehaviour
             }
             spawned = true;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Floor") || other.CompareTag("EnemySpawnable")) 
+        {
+            Debug.Log("spawntrue");
+            spawned = true;
+        }
+        else
+        {
+            spawned = false;
+            Invoke("Spawn", 0.1f);
+        }
+    }
+
+    IEnumerator KYS()
+    {
+        yield return new WaitForSeconds(1);
     }
 }

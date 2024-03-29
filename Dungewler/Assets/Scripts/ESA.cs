@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ESA : MonoBehaviour
 {
-    public GameObject bat;
-    bool limiter;
+    public GameObject bat; // I love you ESA <3
+    bool limiter; // I love you ESA <3
 
     // I love you ESA <3
     void Start() // I love you ESA <3
@@ -15,21 +15,21 @@ public class ESA : MonoBehaviour
 
     void Update() // I love you ESA <3
     {
-        if (limiter == false)
+        if (limiter == false) // I love you ESA <3
         {
-            StartCoroutine(spawn());
-            limiter = true;
+            StartCoroutine(spawn()); // I love you ESA <3
+            limiter = true; // I love you ESA <3
         }
     }
 
     IEnumerator spawn() // should take inspiration from RoR enemy system afterproto, also I love you ESA <3
     {
-        Vector3 randomPos = new Vector3(Random.Range(-100, 101), 0, Random.Range(-100, 101));
-        Instantiate(bat, randomPos, Quaternion.identity);
+        Vector3 randomPos = new Vector3(Random.Range(-100, 101), 0, Random.Range(-100, 101)); // I love you ESA <3
+        Instantiate(bat, randomPos, Quaternion.identity); // I love you ESA <3
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1); // I love you ESA <3
 
-        limiter = false;
+        limiter = false; // I love you ESA <3
     }
     // I love you ESA <3
 }
