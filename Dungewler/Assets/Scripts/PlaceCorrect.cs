@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlaceCorrect : MonoBehaviour
 {
     ModeratorScript moderatorScript;
-    public GameObject self;
     public float x;
     public float y;
     bool depressed;
