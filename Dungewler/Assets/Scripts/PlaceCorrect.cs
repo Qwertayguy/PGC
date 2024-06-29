@@ -7,7 +7,9 @@ public class PlaceCorrect : MonoBehaviour
     ModeratorScript moderatorScript;
     public float x;
     public float y;
+    public Vector2[] offset;
     bool depressed;
+    int rand;
     void Start()
     {
         //moderatorScript = GameObject.FindGameObjectWithTag("Moderator").GetComponent<ModeratorScript>();
