@@ -7,13 +7,14 @@ public class PlaceCorrect : MonoBehaviour
     ModeratorScript moderatorScript;
     public float x;
     public float y;
-    public Vector2[] offset;
+    public Vector3[] offset;
     bool depressed;
     int rand;
     void Start()
     {
         //moderatorScript = GameObject.FindGameObjectWithTag("Moderator").GetComponent<ModeratorScript>();
-        transform.position = transform.position + new Vector3(x, y, 0);
+        rand = Random.Range(0, offset.Length);
+        transform.position = transform.position + offset[rand];
     }
 
     private void OnTriggerEnter2D(Collider2D other)

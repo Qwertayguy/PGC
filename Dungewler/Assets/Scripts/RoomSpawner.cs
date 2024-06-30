@@ -14,7 +14,19 @@ public class RoomSpawner : MonoBehaviour
     ModeratorScript moderatorScript;
     RoomTemplates templates;
     int rand;
-    bool spawned;
+    public bool spawned;
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            spawned = true;
+        }
+        else
+        {
+            spawned = false;
+        }
+    }
     void Start()
     {
         //moderatorScript = GameObject.FindGameObjectWithTag("Moderator").GetComponent<ModeratorScript>();
@@ -25,7 +37,7 @@ public class RoomSpawner : MonoBehaviour
 
     private void Update()
     {
-
+        
     }
 
     void Spawn()
