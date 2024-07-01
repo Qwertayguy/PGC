@@ -29369,7 +29369,7 @@ GameObject:
   - component: {fileID: 826055805}
   m_Layer: 0
   m_Name: EntranceRoom
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55454,6 +55454,7 @@ GameObject:
   - component: {fileID: 1389352236}
   - component: {fileID: 1389352235}
   - component: {fileID: 1389352234}
+  - component: {fileID: 1389352237}
   m_Layer: 0
   m_Name: EntranceFloor
   m_TagString: Floor
@@ -60361,6 +60362,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1389352237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389352232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a78adcc4a7f2440887b079ac0381db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 2035511502}
+  thing: 0
 --- !u!1 &1401845577
 GameObject:
   m_ObjectHideFlags: 0
@@ -90343,6 +90358,7 @@ MonoBehaviour:
   offset:
   - {x: -1, y: -8, z: 0}
   - {x: -1, y: -24, z: 0}
+  self: {fileID: 2035511502}
 --- !u!156049354 &2035511505
 Grid:
   m_ObjectHideFlags: 0

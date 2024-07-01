@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class LowTierGod : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject self;
+    public bool thing;
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            Destroy(self);
+            thing = true;
+        }
+
+    }
+    
     void Start()
     {
         
@@ -13,6 +24,9 @@ public class LowTierGod : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (thing == true)
+        {
+            Destroy(self);
+        }
     }
 }

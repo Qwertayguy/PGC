@@ -10,6 +10,15 @@ public class PlaceCorrect : MonoBehaviour
     public Vector3[] offset;
     bool depressed;
     int rand;
+    public GameObject self;
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Room"))
+        {
+            Destroy(self);
+        }
+        
+    }
     void Start()
     {
         //moderatorScript = GameObject.FindGameObjectWithTag("Moderator").GetComponent<ModeratorScript>();
