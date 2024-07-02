@@ -12,6 +12,8 @@ TagManager:
   - Rooms
   - Moderator
   - Room
+  - Kaboom
+  - Wall
   layers:
   - Default
   - TransparentFX

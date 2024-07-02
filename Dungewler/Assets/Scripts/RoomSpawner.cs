@@ -70,7 +70,7 @@ public class RoomSpawner : MonoBehaviour
                 Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
                 //moderatorScript.roomsPresent = moderatorScript.roomsPresent + 1;
             }
-            spawned = true;
+            //spawned = true;
         }
     }
 

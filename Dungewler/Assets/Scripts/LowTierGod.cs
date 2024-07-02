@@ -8,7 +8,8 @@ public class LowTierGod : MonoBehaviour
     public bool thing;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Floor"))
+        Debug.Log(other.gameObject.tag + other.gameObject.name);
+        if (other.gameObject.CompareTag("Room"))
         {
             Destroy(self);
             thing = true;
