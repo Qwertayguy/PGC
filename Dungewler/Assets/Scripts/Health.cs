@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
     {
         health -= damage;
         healthBar.SetHealth(health);
-        Debug.Log(health);
+        //Debug.Log(health);
 
         // youch animation
 

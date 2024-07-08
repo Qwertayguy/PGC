@@ -9,9 +9,10 @@ public class LowTierGod : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.gameObject.tag + other.gameObject.name);
-        if (other.gameObject.CompareTag("Room"))
+        if (other.gameObject.CompareTag("StuffPoint") & other.gameObject.transform.parent.gameObject != self)
         {
-            Destroy(self);
+            Debug.Log("Death :(");
+            Destroy(self); //when you can prove that this shit actually works remove this line and make a "thing" checker in void start
             thing = true;
         }
 

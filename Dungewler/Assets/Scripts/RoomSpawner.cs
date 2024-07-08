@@ -21,12 +21,12 @@ public class RoomSpawner : MonoBehaviour
         if (other.gameObject.CompareTag("Floor") == false)
         {
             spawned = false;
-            Debug.Log("sssfalse");
+            //Debug.Log("sssfalse");
         }
         else
         {
             spawned = true;
-            Debug.Log("ssstrue");
+            //Debug.Log("ssstrue");
         }
     }
     void Start()
@@ -78,7 +78,7 @@ public class RoomSpawner : MonoBehaviour
     {
         if (other.CompareTag("Enemy") == false || other.CompareTag("Player") == false || other.CompareTag("Door") == false || other.CompareTag("SpawnPoint") == false || other.CompareTag("Rooms") == false) 
         {
-            Debug.Log("spawntrue");
+            //Debug.Log("spawntrue");
             spawned = true;
         }
         else

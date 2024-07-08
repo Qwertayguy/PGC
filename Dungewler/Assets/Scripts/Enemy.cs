@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
             //attackParticle.Play();
             enemyParticles.activator = true;
             enemy.GetComponent<Health>().TakeDamage(damage);
-            Debug.Log("hit" + enemy.name);
+            //Debug.Log("hit" + enemy.name);
 
             break;
 
