@@ -70,7 +70,7 @@ public class RoomSpawner : MonoBehaviour
                 Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
                 //moderatorScript.roomsPresent = moderatorScript.roomsPresent + 1;
             }
-            //spawned = true;
+            spawned = true;
         }
     }
 
@@ -79,12 +79,12 @@ public class RoomSpawner : MonoBehaviour
         if (other.CompareTag("Enemy") == false || other.CompareTag("Player") == false || other.CompareTag("Door") == false || other.CompareTag("SpawnPoint") == false || other.CompareTag("Rooms") == false) 
         {
             //Debug.Log("spawntrue");
-            spawned = true;
+            //spawned = true;
         }
         else
         {
-            spawned = false;
-            Invoke("Spawn", 0.1f);
+            //spawned = false;
+            //Invoke("Spawn", 0.1f);
         }
     }
 
