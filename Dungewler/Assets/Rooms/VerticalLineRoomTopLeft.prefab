@@ -6851,6 +6851,7 @@ MonoBehaviour:
   - {x: -1, y: -8, z: 0}
   - {x: -1, y: -24, z: 0}
   self: {fileID: 2143899167855748538}
+  hitBox: {fileID: 2143899168163378792}
 --- !u!1 &2143899168163378792
 GameObject:
   m_ObjectHideFlags: 0

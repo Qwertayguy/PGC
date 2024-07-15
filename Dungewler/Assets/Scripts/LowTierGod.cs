@@ -9,7 +9,7 @@ public class LowTierGod : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.gameObject.tag + other.gameObject.name);
-        if (other.gameObject.CompareTag("StuffPoint") & other.gameObject.transform.parent.gameObject != self)
+        if (other.gameObject.CompareTag("Room") & other.gameObject.transform.parent.gameObject != self)
         {
             Debug.Log(other.gameObject.transform.parent.name);
             Debug.Log(other.gameObject.name);

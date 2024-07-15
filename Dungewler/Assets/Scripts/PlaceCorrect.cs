@@ -11,6 +11,8 @@ public class PlaceCorrect : MonoBehaviour
     bool depressed;
     int rand;
     public GameObject self;
+    public GameObject hitBox;
+    LowTierGod LowTierGod;
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Room"))
@@ -19,11 +21,19 @@ public class PlaceCorrect : MonoBehaviour
         }
         
     }
+    private void Awake()
+    {
+        LowTierGod = hitBox.GetComponent<LowTierGod>();
+    }
     void Start()
     {
         //moderatorScript = GameObject.FindGameObjectWithTag("Moderator").GetComponent<ModeratorScript>();
+        LowTierGod.enabled = false;
+        //Debug.Log(hitBoxBox.enabled);
         rand = Random.Range(0, offset.Length);
         transform.position = transform.position + offset[rand];
+        LowTierGod.enabled = true;
+        //Debug.Log(hitBoxBox.enabled);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,5 +49,10 @@ public class PlaceCorrect : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         depressed = true;
+    }
+
+    private void Update()
+    {
+        Debug.Log(LowTierGod.enabled);
     }
 }

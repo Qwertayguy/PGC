@@ -76,10 +76,11 @@ public class RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy") == false || other.CompareTag("Player") == false || other.CompareTag("Door") == false || other.CompareTag("SpawnPoint") == false || other.CompareTag("Rooms") == false) 
+        if (other.CompareTag("Room") == true) 
         {
             //Debug.Log("spawntrue");
-            //spawned = true;
+            spawned = false;
+            Invoke("Spawn", 0.1f);
         }
         else
         {

@@ -6608,6 +6608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VerticalLineRoomTopLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 2143899167855748538, guid: 17b89c14b09fa214a88564fd936f8c7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2143899167855748539, guid: 17b89c14b09fa214a88564fd936f8c7c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -62376,6 +62380,7 @@ MonoBehaviour:
   - {x: -1, y: -8, z: 0}
   - {x: -1, y: -24, z: 0}
   self: {fileID: 1508790556}
+  hitBox: {fileID: 0}
 --- !u!156049354 &1508790561
 Grid:
   m_ObjectHideFlags: 0
