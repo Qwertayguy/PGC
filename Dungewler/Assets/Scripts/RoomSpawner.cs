@@ -18,14 +18,14 @@ public class RoomSpawner : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Floor") == false)
+        if (other.gameObject.CompareTag("Room") == false)
         {
-            spawned = false;
+            //spawned = false;
             //Debug.Log("sssfalse");
         }
         else
         {
-            spawned = true;
+            //spawned = true;
             //Debug.Log("ssstrue");
         }
     }
@@ -76,11 +76,12 @@ public class RoomSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Room") == true) 
+        if (other.CompareTag("Room")) 
         {
             //Debug.Log("spawntrue");
+            //make it spawn a door block
             spawned = false;
-            Invoke("Spawn", 0.1f);
+            //Invoke("Spawn", 0.1f);
         }
         else
         {
@@ -93,5 +94,6 @@ public class RoomSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         Destroy(self); //*thunder sfx*
+        //deactivate script instead of suicide
     }
 }
