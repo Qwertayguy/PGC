@@ -6,15 +6,17 @@ public class PlaceCorrect : MonoBehaviour
 {
     ModeratorScript moderatorScript;
     public Vector3[] offset;
+    Vector3 originalPos;
     bool depressed;
     int rand;
     public GameObject self;
     public GameObject hitBox;
     LowTierGod LowTierGod;
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Room"))
         {
+            //moderatorScript.roomsPresent = moderatorScript.roomsPresent - 1;
             Destroy(self);
         }
         
@@ -22,25 +24,18 @@ public class PlaceCorrect : MonoBehaviour
     private void Awake()
     {
         LowTierGod = hitBox.GetComponent<LowTierGod>();
+        //moderatorScript = GameObject.FindGameObjectWithTag("Moderator").GetComponent<ModeratorScript>();
     }
     void Start()
     {
-        //moderatorScript = GameObject.FindGameObjectWithTag("Moderator").GetComponent<ModeratorScript>();
+        //moderatorScript.roomsPresent = moderatorScript.roomsPresent + 1;
+        originalPos = transform.position;
         LowTierGod.enabled = false;
         //Debug.Log(hitBoxBox.enabled);
         rand = Random.Range(0, offset.Length);
         transform.position = transform.position + offset[rand];
         LowTierGod.enabled = true;
         //Debug.Log(hitBoxBox.enabled);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (depressed == true && (other.CompareTag("Room")))
-        {
-            //Destroy(other);
-            moderatorScript.roomsPresent = moderatorScript.roomsPresent - 1;
-        }
     }
 
     IEnumerator HurtOthers()

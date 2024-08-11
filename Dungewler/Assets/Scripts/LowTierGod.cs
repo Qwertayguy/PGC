@@ -15,6 +15,7 @@ public class LowTierGod : MonoBehaviour
             Debug.Log(other.gameObject.name);
             Debug.Log("Death :(");
             //Destroy(self); //when you can prove that this shit actually works remove this line and make a "thing" checker in void start
+            Destroy(self);
             thing = true;
         }
 

@@ -15,31 +15,38 @@ public class RoomSpawner : MonoBehaviour
     RoomTemplates templates;
     int rand;
     public bool spawned;
+    public bool touchedRoom;
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Room") == false)
+        if (other.gameObject.CompareTag("Room") || other.gameObject.CompareTag("SpawnPoint"))
         {
-            //spawned = false;
-            //Debug.Log("sssfalse");
+            //touchedRoom = true;
+            Destroy(self);
         }
-        else
-        {
-            //spawned = true;
-            //Debug.Log("ssstrue");
-        }
+    }
+
+    private void Awake()
+    {
+        //moderatorScript = GameObject.FindGameObjectWithTag("Moderator").GetComponent<ModeratorScript>();
+        //adding the moderatorScript here seems to break the script
     }
     void Start()
     {
         //moderatorScript = GameObject.FindGameObjectWithTag("Moderator").GetComponent<ModeratorScript>();
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+        if (touchedRoom == true)
+        {
+            spawned = true;
+            //spawn doorwayblock
+        }
         Invoke("Spawn", 0.1f);
-        StartCoroutine(KYS());
+        //StartCoroutine(KYS());
     }
 
     private void Update()
     {
-        
+        Debug.Log("spawned " + spawned);
     }
 
     void Spawn()
@@ -72,22 +79,7 @@ public class RoomSpawner : MonoBehaviour
             }
             spawned = true;
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Room")) 
-        {
-            //Debug.Log("spawntrue");
-            //make it spawn a door block
-            spawned = false;
-            //Invoke("Spawn", 0.1f);
-        }
-        else
-        {
-            //spawned = false;
-            //Invoke("Spawn", 0.1f);
-        }
+        
     }
 
     IEnumerator KYS()

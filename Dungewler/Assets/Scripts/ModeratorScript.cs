@@ -6,7 +6,6 @@ public class ModeratorScript : MonoBehaviour
 {
     public int maxRooms;
     public int roomsPresent;
-    public int maxChest;
     void Start()
     {
         
